@@ -1,3 +1,5 @@
+打完 Docker 就开源，大家点个小小的 star 支持一下~
+
 # LM Speed - 简单的大模型测速分析工具
 
 传送门：<https://lmspeed.net>
