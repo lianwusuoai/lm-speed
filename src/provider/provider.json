@@ -1,0 +1,52 @@
+[
+  {
+    "baseHost": "api.siliconflow.cn",
+    "name": "硅基流动",
+    "url": "https://cloud.siliconflow.cn/i/UtdCH9iW"
+  },
+  {
+    "baseHost": "api.ppinfra.com",
+    "name": "派欧算力云",
+    "url": "https://ppinfra.com/user/register?invited_by=AX711V"
+  },
+  {
+    "baseHost": "dashscope.aliyuncs.com",
+    "name": "阿里百炼",
+    "url": "https://aliyun.com/"
+  },
+  {
+    "baseHost": "api.lkeap.cloud.tencent.com",
+    "name": "腾讯云",
+    "url": "https://cloud.tencent.com/"
+  },
+  {
+    "baseHost": "qianfan.baidubce.com",
+    "name": "百度千帆",
+    "url": "https://cloud.baidu.com/product-s/qianfan_home"
+  },
+  {
+    "baseHost": "api.deepseek.com",
+    "name": "DeepSeek",
+    "url": "https://deepseek.com/"
+  },
+  {
+    "baseHost": "maas-api.cn-huabei-1.xf-yun.com",
+    "name": "AICloud 讯飞云",
+    "url": "https://www.xf-yun.com/"
+  },
+  {
+    "baseHost": "api.suanli.cn",
+    "name": "算力中国 API",
+    "url": "https://api.suanli.cn/"
+  },
+  {
+    "baseHost": "ark.cn-beijing.volces.com",
+    "name": "火山方舟",
+    "url": "https://www.volcengine.com/product/ark"
+  },
+  {
+    "baseHost": "wishub-x1.ctyun.cn",
+    "name": "天翼云",
+    "url": "https://huiju.ctyun.cn/service"
+  }
+]

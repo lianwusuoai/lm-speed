@@ -1,0 +1,30 @@
+[
+  {
+    "name": "DeepSeek R1",
+    "parameters": 671,
+    "alias": [
+      "deepseek-ai/DeepSeek-R1",
+      "deepseek-reasoner",
+      "deepseek-r1",
+      "deepseek/deepseek-r1",
+      "xdeepseekr1",
+      "deepseek/deepseek-r1/community",
+      "ep-20250214230925-mq6qd",
+      "4bd107bff85941239e27b1509eccfe98",
+      "7ba7726dad4c4ea4ab7f39c7741aea68",
+      "Pro/deepseek-ai/DeepSeek-R1"
+    ]
+  },
+  {
+    "name": "DeepSeek V3",
+    "parameters": 671,
+    "alias": [
+        "deepseek-v3",
+        "deepseek/deepseek-v3/community",
+        "deepseek-ai/DeepSeek-V3",
+        "deepseek/deepseek-v3",
+        "deepseek-chat",
+        "xdeepseekv3"
+    ]
+  }
+]

@@ -1,0 +1,158 @@
+{
+  "Features": {
+    "items": {
+      "analytics": {
+        "description": "详细的性能指标，包括首个令牌延迟、每秒令牌数和总处理时间",
+        "name": "性能分析"
+      },
+      "endpoint": {
+        "description": "使用自定义基础 URL 和 API 密钥测试 API 性能，支持官方和代理端点",
+        "name": "自定义端点支持"
+      },
+      "speedTesting": {
+        "description": "通过多个提示词的综合测试，准确测量 API 的响应时间",
+        "name": "实时速度测试"
+      },
+      "streaming": {
+        "description": "通过流式结果实时监控每个提示词评估的测试进度",
+        "name": "实时流式结果"
+      }
+    },
+    "sectionTitle": "为什么选择我们",
+    "subtitle": "帮助开发者通过全面的速度测试和分析优化 AI 应用性能",
+    "title": "专业的 API 速度测试工具"
+  },
+  "Header": {
+    "brand": "语言模型速度",
+    "home": "首页",
+    "rank": "排行榜",
+    "feedback": "反馈",
+    "nav": "导航"
+  },
+  "HomePage": {
+    "about": "前往关于页面",
+    "subtitle": "支持 OpenAI、DeepSeek、硅基流动、腾讯云等。帮助开发者通过全面的速度测试和分析优化 AI 应用性能",
+    "title": "大模型 API 速度测试"
+  },
+  "Metadata": {
+    "title": "LM Speed - 大模型 API 速度测试 & 排行",
+    "description": "专业的大模型 API 速度测试工具，提供实时性能分析和全球速度排行榜。支持多种大模型服务商，帮助开发者选择最优 API 服务商，优化应用性能",
+    "ogImage": "/og-1739454509332.png"
+  },
+  "Nav": {
+    "title": "LM Speed 提供商导航",
+    "subtitle": "以下是所有在 LM Speed 测试中使用的 API 提供商列表",
+    "loading": "加载中...",
+    "viewResults": "查看测试结果"
+  },
+  "RecentTests": {
+    "recentTests": "最近测试记录"
+  },
+  "SpeedTest": {
+    "form": {
+      "apiKey": {
+        "label": "API 密钥",
+        "disclaimer": "LM Speed 不会存储您的 API 密钥，仅用于一次性测试",
+        "remember": "本地记住 API 密钥"
+      },
+      "baseUrl": {
+        "label": "基础 URL",
+        "placeholder": "输入基础 URL"
+      },
+      "modelId": {
+        "label": "模型 ID",
+        "placeholder": "先抓取模型 ID，然后选择"
+      },
+      "submit": {
+        "default": "运行速度测试（5 轮对话，预计 6000 token）",
+        "running": "正在运行测试..."
+      }
+    },
+    "results": {
+      "metrics": {
+        "firstTokenLatency": "首字",
+        "tokensPerSecond": "每秒令牌数",
+        "totalTime": "总时间"
+      },
+      "model": "模型",
+      "output": {
+        "loading": "加载中...",
+        "title": "AI 输出",
+        "waiting": "等待中..."
+      },
+      "prompt": "提示词",
+      "status": {
+        "completed": "已完成",
+        "pending": "等待中",
+        "running": "运行中"
+      },
+      "summary": {
+        "title": "速度测试汇总",
+        "avgFirstTokenLatency": "平均首字延迟",
+        "maxFirstTokenLatency": "最长首字延迟",
+        "minFirstTokenLatency": "最短首字延迟",
+        "avgTotalTime": "平均总时间",
+        "maxTotalTime": "最长总时间",
+        "minTotalTime": "最短总时间",
+        "avgTokensPerSecond": "平均每秒令牌数",
+        "maxTokensPerSecond": "最高每秒令牌数",
+        "minTokensPerSecond": "最低每秒令牌数",
+        "totalTokens": "总令牌数"
+      },
+      "title": "测试结果"
+    }
+  },
+  "FAQ": {
+    "title": "常见问题",
+    "subtitle": "了解更多关于 LM Speed 的详细信息",
+    "questions": {
+      "performance": {
+        "question": "LM Speed 如何进行性能测试？",
+        "answer": "LM Speed 采用五轮连续压力测试机制。通过 tiktoken 进行精确的令牌计算。"
+      },
+      "comparison": {
+        "question": "如何比较不同 API 服务商的性能？",
+        "answer": "通过标准化的性能测试方案和排行榜功能，您可以直观地比较不同服务商 API 的性能表现。系统会自动分析并展示各项性能指标的对比数据，帮助您选择最适合的模型和服务商。"
+      },
+      "monitoring": {
+        "question": "是否支持长期性能监控？",
+        "answer": "即将支持"
+      }
+    }
+  },
+  "rank": {
+    "columnSettings": "列设置",
+    "columnSettingsDesc": "选择要显示的列",
+    "metric": {
+      "firstTokenLatency": "首个令牌延迟",
+      "label": "指标",
+      "tokensPerSecond": "每秒令牌数"
+    },
+    "model": {
+      "label": "模型",
+      "all": "全部模型"
+    },
+    "table": {
+      "rank": "排行",
+      "avgLatency": "平均首字",
+      "avgTokens": "平均输出速度",
+      "avgTotalTime": "平均总时间 (s)",
+      "baseUrl": "基础 URL",
+      "loading": "加载中...",
+      "maxMinLatency": "最大/最小首字",
+      "maxMinTokens": "最大/最小 (t/s)",
+      "model": "模型",
+      "noResults": "未找到结果",
+      "totalAvgTokens": "平均总速度",
+      "totalTests": "次数"
+    },
+    "timeRange": {
+      "all": "所有时间",
+      "day": "最近 24 小时",
+      "label": "时间范围",
+      "month": "最近一个月",
+      "week": "最近一周"
+    },
+    "title": "LM Speed 速度测试排名"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "Features": {
+    "items": {
+      "analytics": {
+        "description": "Detailed performance metrics including first token latency, tokens per second, and total processing time",
+        "name": "Performance Analytics"
+      },
+      "endpoint": {
+        "description": "Test API performance with custom base URLs and API keys, supporting both official and proxy endpoints",
+        "name": "Custom Endpoint Support"
+      },
+      "speedTesting": {
+        "description": "Accurately measure API response times through comprehensive testing with multiple prompts",
+        "name": "Real-time Speed Testing"
+      },
+      "streaming": {
+        "description": "Monitor test progress in real-time with streaming results for each prompt evaluation",
+        "name": "Real-time Streaming Results"
+      }
+    },
+    "sectionTitle": "Why Choose Us",
+    "subtitle": "Help developers optimize AI application performance through comprehensive speed testing and analysis",
+    "title": "Professional API Speed Testing Tool"
+  },
+  "Header": {
+    "brand": "LM Speed",
+    "home": "Home",
+    "rank": "Ranking",
+    "feedback": "Feedback",
+    "nav": "Navigation"
+  },
+  "HomePage": {
+    "about": "Go to About page",
+    "subtitle": "Supporting OpenAI, DeepSeek, Silicon Flow, Tencent Cloud and more. Help developers optimize AI application performance through comprehensive speed testing and analysis",
+    "title": "LLM API Speed Test"
+  },
+  "Metadata": {
+    "title": "LM Speed - LLM API Speed Test & Ranking",
+    "description": "Professional LLM API speed testing tool providing real-time performance analysis and global speed rankings. Supporting multiple LLM service providers to help developers choose the optimal API provider and optimize application performance",
+    "ogImage": "/og-1739454626988.png"
+  },
+  "Nav": {
+    "title": "LM Speed Provider Navigation",
+    "subtitle": "Here is a list of all API providers used in LM Speed tests",
+    "loading": "Loading...",
+    "viewResults": "View Test Results"
+  },
+  "RecentTests": {
+    "recentTests": "Recent Test Results"
+  },
+  "SpeedTest": {
+    "form": {
+      "apiKey": {
+        "label": "API Key",
+        "disclaimer": "LM Speed does not store your API key, only used for one-time testing",
+        "remember": "Remember API key in browser"
+      },
+      "baseUrl": {
+        "label": "Base URL",
+        "placeholder": "Enter base URL"
+      },
+      "modelId": {
+        "label": "Model ID",
+        "placeholder": "Fetch model ID first, then select"
+      },
+      "submit": {
+        "default": "Run Speed Test (5 rounds, Est. 6000 tokens)",
+        "running": "Running test..."
+      }
+    },
+    "results": {
+      "metrics": {
+        "firstTokenLatency": "First Token",
+        "tokensPerSecond": "Tokens/Second",
+        "totalTime": "Total Time"
+      },
+      "model": "Model",
+      "output": {
+        "loading": "Loading...",
+        "title": "AI Output",
+        "waiting": "Waiting..."
+      },
+      "prompt": "Prompt",
+      "status": {
+        "completed": "Completed",
+        "pending": "Pending",
+        "running": "Running"
+      },
+      "summary": {
+        "title": "Speed Test Summary",
+        "avgFirstTokenLatency": "Average First Token Latency",
+        "maxFirstTokenLatency": "Maximum First Token Latency",
+        "minFirstTokenLatency": "Minimum First Token Latency",
+        "avgTotalTime": "Average Total Time",
+        "maxTotalTime": "Maximum Total Time",
+        "minTotalTime": "Minimum Total Time",
+        "avgTokensPerSecond": "Average Tokens/Second",
+        "maxTokensPerSecond": "Maximum Tokens/Second",
+        "minTokensPerSecond": "Minimum Tokens/Second",
+        "totalTokens": "Total Tokens"
+      },
+      "title": "Test Results"
+    }
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Learn more about LM Speed",
+    "questions": {
+      "performance": {
+        "question": "How does LM Speed conduct performance testing?",
+        "answer": "LM Speed employs a five-round continuous stress testing mechanism. Token calculations are performed accurately using tiktoken."
+      },
+      "comparison": {
+        "question": "How to compare performance between different API providers?",
+        "answer": "Through standardized performance testing and ranking features, you can visually compare the performance of different providers' APIs. The system automatically analyzes and displays comparative data for various performance metrics, helping you choose the most suitable model and provider."
+      },
+      "monitoring": {
+        "question": "Is long-term performance monitoring supported?",
+        "answer": "Coming soon"
+      }
+    }
+  },
+  "rank": {
+    "columnSettings": "Column Settings",
+    "columnSettingsDesc": "Select columns to display",
+    "metric": {
+      "firstTokenLatency": "First Token Latency",
+      "label": "Metric",
+      "tokensPerSecond": "Tokens/Second"
+    },
+    "model": {
+      "label": "Model",
+      "all": "All Models"
+    },
+    "parameterDesc": {
+      "latency": {
+        "avgLatency": "Average response time for the first token, reflecting initial response speed",
+        "maxMinLatency": "Maximum and minimum response times for the first token, showing latency variation range",
+        "title": "Latency Metrics",
+        "totalTests": "Total number of completed tests, higher values indicate more reliable data"
+      },
+      "performance": {
+        "avgTokens": "Average tokens generated per second in a single test, reflecting real-time response speed",
+        "maxMinTokens": "Maximum and minimum tokens per second observed in a single test, showing performance variation range",
+        "title": "Performance Metrics",
+        "totalAvgTokens": "Cumulative average tokens per second across all tests, reflecting long-term stable performance"
+      },
+      "title": "Parameter Description"
+    },
+    "table": {
+      "rank": "Ranking",
+      "avgLatency": "Avg First Token Latency",
+      "avgTokens": "Avg Tokens/s",
+      "avgTotalTime": "Avg Total Time (s)",
+      "baseUrl": "Base URL",
+      "loading": "Loading...",
+      "maxMinLatency": "Max/Min Latency",
+      "maxMinTokens": "Max/Min Tokens/s",
+      "model": "Model",
+      "noResults": "No results found",
+      "totalAvgTokens": "Total Avg Tokens/s",
+      "totalTests": "Total Tests"
+    },
+    "timeRange": {
+      "all": "All Time",
+      "day": "Last 24 Hours",
+      "label": "Time Range",
+      "month": "Last Month",
+      "week": "Last Week"
+    },
+    "title": "Speed Test Rankings"
+  }
+}
