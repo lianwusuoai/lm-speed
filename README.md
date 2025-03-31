@@ -1,4 +1,3 @@
-~~打完 Docker 就开源，大家点个小小的 star 支持一下~~ 最近太忙了，先把源码开源了。
 
 # LM Speed - 简单的大模型测速分析工具
 
@@ -7,6 +6,39 @@
 为 AI 应用开发者提供精准可靠的 OpenAI API 性能测试解决方案，通过多维度的实时数据分析，帮助用户快速定位性能瓶颈，优化模型调用策略。同时提供直观的排行榜功能，让用户能够轻松比较和选择最适合的模型和服务商。
 
 ![picture-2025-02-12-20-21-28](https://vscode-markdown.s3.bitiful.net/eba9b5e1e200dd0c5504914243d1d6247eb4a16c2c20f87adfe11244ff9668c7.png)  
+
+## 快速开始
+
+Docker Compose 部署示例
+
+```yaml
+version: '3.8'
+
+services:
+  app:
+    image: nexmoe/lmspeed:latest
+    ports:
+      - "8650:3000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/nexmoe
+      - NODE_ENV=production
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nexmoe
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+```
 
 ## 解决的三大核心痛点
 
