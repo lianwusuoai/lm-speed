@@ -73,6 +73,32 @@ cp .env.example .env
 npm run dev
 ```
 
+## URL Parameters Usage
+
+LM Speed supports quick test initiation through URL parameters without manual form filling. You can use it in the following way:
+
+```
+https://lmspeed.net/?baseUrl=YOUR_BASE_URL&apiKey=YOUR_API_KEY&modelId=YOUR_MODEL_ID
+```
+
+Parameter Description:
+
+- `baseUrl`: The base URL of the API service, e.g., `https://api.deepseek.com/v1`
+- `apiKey`: Your API key
+- `modelId`: The model ID to test
+
+Example:
+
+```
+http://lmspeed.net/zh-CN?baseUrl=https://api.suanli.cn/v1&apiKey=sk-W0rpStc95T7JVYVwDYc29IyirjtpPPby6SozFMQr17m8KWeo&modelId=free:QwQ-32B
+```
+
+Notes:
+
+1. All parameters are required; missing any parameter will prevent the test from starting automatically
+2. For security reasons, it's recommended not to pass API keys directly in URLs, but rather use the form for manual input
+3. If the URL contains special characters, make sure to URL encode them
+
 ## Three Core Pain Points Solved
 
 ### 1. Response Quality Opacity

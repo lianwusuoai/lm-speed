@@ -52,26 +52,56 @@ volumes:
 ### 手动部署
 
 1. 克隆仓库
+
 ```bash
 git clone https://github.com/yourusername/lm-speed.git
 cd lm-speed
 ```
 
 2. 安装依赖
+
 ```bash
 npm install
 ```
 
 3. 配置环境变量
+
 ```bash
 cp .env.example .env
 # 编辑 .env 文件，填入必要的配置信息
 ```
 
 4. 启动服务
+
 ```bash
 npm run dev
 ```
+
+## URL 参数使用说明
+
+LM Speed 支持通过 URL 参数快速启动测试，无需手动填写表单。您可以通过以下方式使用：
+
+```
+https://lmspeed.net/?baseUrl=YOUR_BASE_URL&apiKey=YOUR_API_KEY&modelId=YOUR_MODEL_ID
+```
+
+参数说明：
+
+- `baseUrl`: API 服务的基础 URL，例如 `https://api.deepseek.com/v1`
+- `apiKey`: 您的 API 密钥
+- `modelId`: 要测试的模型 ID
+
+示例：
+
+```
+http://lmspeed.net/zh-CN?baseUrl=https://api.suanli.cn/v1&apiKey=sk-W0rpStc95T7JVYVwDYc29IyirjtpPPby6SozFMQr17m8KWeo&modelId=free:QwQ-32B
+```
+
+注意事项：
+
+1. 所有参数都是必需的，缺少任何一个参数都会导致测试无法自动开始
+2. 为了安全起见，建议不要在 URL 中直接传递 API 密钥，而是使用表单手动输入
+3. 如果 URL 中包含特殊字符，请确保进行 URL 编码
 
 ## 解决的三大核心痛点 | Three Core Pain Points Solved
 
