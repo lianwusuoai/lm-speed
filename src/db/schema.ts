@@ -27,12 +27,13 @@ export const speedTestResultSchema = z.object({
   results: z.array(speedTestResultItemSchema),
 });
 
-export const providerSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  email: z.string().email(),
-  createdAt: z.string().datetime(),
-  updatedAt: z.string().datetime(),
+export const providersTable = pgTable("providers", {
+  id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  name: varchar({ length: 255 }),
+  host: varchar({ length: 255 }).notNull(),
+  models: varchar({ length: 255 }).array().notNull(),
+  createdAt: timestamp().defaultNow().notNull(),
+  updatedAt: timestamp().defaultNow().notNull(),
 });
 
 export const speedTestsTable = pgTable("speed_tests", {

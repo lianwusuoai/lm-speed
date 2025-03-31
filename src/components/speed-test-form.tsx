@@ -2,7 +2,7 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { speedTestSchema, modelSchema, type SpeedTestInput } from '@/lib/schema'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { type SpeedTestResult } from '@/db/schema'
 import { Button } from './ui/button'
 import { useTranslations } from 'next-intl'
@@ -36,13 +36,13 @@ export function SpeedTestForm() {
 
 	const contentRef = useRef<{ [key: number]: string }>({})
 
-	const TEST_PROMPTS = [
+	const TEST_PROMPTS = useMemo(() => [
 		'Explain the concept of quantum computing in simple terms.',
 		'Write a short story about a robot learning to paint.',
 		'What are the main differences between REST and GraphQL?',
 		'Describe the taste of your favorite food.',
 		'How does photosynthesis work?',
-	]
+	], [])
 
 	const {
 		register,
@@ -56,24 +56,18 @@ export function SpeedTestForm() {
 
 	const [rememberApiKey, setRememberApiKey] = useState(true)
 
-	useEffect(() => {
-		const savedBaseUrl = localStorage.getItem('speedtest_baseUrl')
-		const savedModelId = localStorage.getItem('speedtest_modelId')
-		const savedApiKey = localStorage.getItem('speedtest_apiKey')
-		if (savedBaseUrl) {
-			setValue('baseUrl', savedBaseUrl)
+	// Function to parse URL parameters
+	const getUrlParams = () => {
+		if (typeof window !== 'undefined') {
+			const searchParams = new URLSearchParams(window.location.search);
+			return {
+				baseUrl: searchParams.get('baseUrl'),
+				apiKey: searchParams.get('apiKey'),
+				modelId: searchParams.get('modelId'),
+			};
 		}
-		if (savedModelId) {
-			setValue('modelId', savedModelId)
-		}
-		if (savedApiKey) {
-			setValue('apiKey', savedApiKey)
-			setRememberApiKey(true)
-		}
-		if (savedBaseUrl && savedApiKey) {
-			//   fetchModels(savedBaseUrl, savedApiKey);
-		}
-	}, [setValue])
+		return { baseUrl: null, apiKey: null, modelId: null };
+	};
 
 	const fetchModels = async (baseUrl: string, apiKey: string) => {
 		setIsFechingModel(true)
@@ -109,7 +103,7 @@ export function SpeedTestForm() {
 		setIsFechingModel(false)
 	}
 
-	const onSubmit = async (data: SpeedTestInput) => {
+	const onSubmit = useCallback(async (data: SpeedTestInput) => {
 		try {
 			setLoading(true)
 			contentRef.current = {}
@@ -258,7 +252,57 @@ export function SpeedTestForm() {
 		} finally {
 			setLoading(false)
 		}
-	}
+	}, [TEST_PROMPTS, rememberApiKey])
+
+
+	
+	useEffect(() => {
+		const savedBaseUrl = localStorage.getItem('speedtest_baseUrl')
+		const savedModelId = localStorage.getItem('speedtest_modelId')
+		const savedApiKey = localStorage.getItem('speedtest_apiKey')
+		
+		// Check URL parameters first
+		const urlParams = getUrlParams();
+		
+		if (urlParams.baseUrl) {
+			setValue('baseUrl', urlParams.baseUrl);
+		} else if (savedBaseUrl) {
+			setValue('baseUrl', savedBaseUrl);
+		}
+		
+		if (urlParams.modelId) {
+			setValue('modelId', urlParams.modelId);
+		} else if (savedModelId) {
+			setValue('modelId', savedModelId);
+		}
+		
+		if (urlParams.apiKey) {
+			setValue('apiKey', urlParams.apiKey);
+			setRememberApiKey(true);
+		} else if (savedApiKey) {
+			setValue('apiKey', savedApiKey);
+			setRememberApiKey(true);
+		}
+		
+		// If all three parameters are present in URL, start speed test automatically
+		if (urlParams.baseUrl && urlParams.apiKey && urlParams.modelId) {
+			// Add the model to the models list if not already present
+			setModels(prev => {
+				if (!prev.some(model => model.id === urlParams.modelId)) {
+					return [...prev, { id: urlParams.modelId! }];
+				}
+				return prev;
+			});
+			
+			// Trigger the form submission after a short delay to ensure form is ready
+			setTimeout(() => {
+				handleSubmit(onSubmit)();
+			}, 500);
+		} else if (savedBaseUrl && savedApiKey) {
+			//   fetchModels(savedBaseUrl, savedApiKey);
+		}
+	}, [setValue, handleSubmit, onSubmit])
+
 	const [open, setOpen] = useState(false)
 
 	return (
