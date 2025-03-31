@@ -41,11 +41,10 @@ COPY --from=builder /app/pnpm-lock.yaml* ./
 RUN pnpm install --prod --frozen-lockfile
 
 # 从构建阶段复制必要文件
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/drizzle.config.ts ./
-COPY --from=builder /app/drizzle.config.ts ./
-COPY --from=builder /app/drizzle ./drizzle
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
+COPY --from=builder --chown=nextjs:nodejs /app/drizzle.config.ts ./
+COPY --from=builder --chown=nextjs:nodejs /app/drizzle ./drizzle
 
 # 设置正确的权限
 RUN chown -R nextjs:nodejs /app
