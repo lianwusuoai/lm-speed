@@ -143,10 +143,5 @@ Issues and Pull Requests are welcome! Before submitting a PR, please ensure:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
-## Contact
-
-- Official Website: <https://lmspeed.net>
-- Issue Tracker: <https://github.com/yourusername/lm-speed/issues>
-- Email: your-email@example.com
 
 

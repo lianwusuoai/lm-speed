@@ -19,10 +19,12 @@
     "@radix-ui/react-select": "^2.1.6",
     "@radix-ui/react-slot": "^1.1.2",
     "@radix-ui/react-tooltip": "^1.1.8",
+    "bull": "^4.16.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.0",
     "dotenv": "^16.4.7",
+    "drizzle-kit": "^0.30.4",
     "drizzle-orm": "^0.39.2",
     "html-to-image": "^1.11.11",
     "lucide-react": "^0.474.0",
@@ -41,8 +43,7 @@
     "tailwindcss-animate": "^1.0.7",
     "tiktoken": "^1.0.20",
     "ufo": "^1.5.4",
-    "zod": "^3.24.1",
-    "drizzle-kit": "^0.30.4"
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
