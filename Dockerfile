@@ -34,6 +34,9 @@ RUN addgroup --system --gid 1001 nodejs && \
 # 启用 pnpm
 RUN npm install -g pnpm
 
+# 安装 netcat 工具
+RUN apk add --no-cache netcat-openbsd
+
 # 复制 package.json 和 pnpm-lock.yaml
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/pnpm-lock.yaml* ./
@@ -46,6 +49,10 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next ./.next
 COPY --from=builder --chown=nextjs:nodejs /app/drizzle.config.ts ./
 COPY --from=builder --chown=nextjs:nodejs /app/drizzle ./drizzle
 
+# 复制启动脚本
+COPY start.sh ./
+RUN chmod +x start.sh
+
 # 设置正确的权限
 RUN chown -R nextjs:nodejs /app
 
@@ -56,5 +63,5 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# 使用 package.json 中的 start 命令启动应用
-CMD ["pnpm", "start"]
+# 使用新的启动脚本
+CMD ["./start.sh"]
