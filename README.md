@@ -1,15 +1,24 @@
+[中文](README_zh.md) | English
 
-# LM Speed - 简单的大模型测速分析工具
+# LM Speed - Simple LLM Speed Analysis Tool
 
-传送门：<https://lmspeed.net>
+Portal: <https://lmspeed.net>
 
-为 AI 应用开发者提供精准可靠的 OpenAI API 性能测试解决方案，通过多维度的实时数据分析，帮助用户快速定位性能瓶颈，优化模型调用策略。同时提供直观的排行榜功能，让用户能够轻松比较和选择最适合的模型和服务商。
+Provides precise and reliable OpenAI API performance testing solutions for AI application developers. Through multi-dimensional real-time data analysis, it helps users quickly identify performance bottlenecks and optimize model calling strategies. It also offers an intuitive ranking feature, allowing users to easily compare and select the most suitable models and service providers.
 
 ![picture-2025-02-12-20-21-28](https://vscode-markdown.s3.bitiful.net/eba9b5e1e200dd0c5504914243d1d6247eb4a16c2c20f87adfe11244ff9668c7.png)  
 
-## 快速开始
+## Features
 
-Docker Compose 部署示例
+- 🚀 Real-time Performance Monitoring: Multi-dimensional real-time data display
+- 📊 Comprehensive Performance Evaluation: Core metrics including first token latency and response time
+- 📈 Data Visualization: Rich chart displays for intuitive performance trend understanding
+- 🔄 Automated Testing: Five-round continuous stress testing for reliable data
+- 📝 One-click Reports: Automatic professional test report generation with export capabilities
+
+## Quick Start
+
+### Deploy with Docker Compose
 
 ```yaml
 version: '3.8'
@@ -40,30 +49,104 @@ volumes:
   postgres_data:
 ```
 
-## 解决的三大核心痛点
+### Manual Deployment
 
-### 1. 响应质量不透明
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/lm-speed.git
+cd lm-speed
+```
 
-DeepSeek 官方的 API 不能用？硅基流动的 API 太慢？在选择 LLM API 服务时，开发者经常面临服务质量难以评估的问题。不同服务商的 API 性能差异巨大，且缺乏客观的评估标准。LM Speed 提供标准化的性能测试方案，让您在投入开发前就能准确评估各个 API 的实际表现。
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Configure environment variables
+```bash
+cp .env.example .env
+# Edit .env file with necessary configuration
+```
+
+4. Start the service
+```bash
+npm run dev
+```
+
+## Three Core Pain Points Solved
+
+### 1. Response Quality Opacity
+
+Is DeepSeek's official API unusable? Is Silicon Flow's API too slow? When choosing LLM API services, developers often face challenges in evaluating service quality. Different service providers' APIs have significant performance variations, and there's a lack of objective evaluation standards. LM Speed provides standardized performance testing solutions, allowing you to accurately assess each API's actual performance before development.
 
 ![picture-2025-02-12-20-22-30](https://vscode-markdown.s3.bitiful.net/0ff2ab60e7bf2fb64134565d4d9d82535d0d87db1f568dcdc5465c73b6eadbfa.png)  
 
-### 2. 性能波动难以监控
+### 2. Performance Fluctuation Monitoring
 
-不知道大模型 API 速度如何？不知道供应商靠不靠谱？传统的性能测试工具往往只能提供简单的响应时间数据，无法全面反映 API 的实际性能表现。LM Speed 采用五轮连续压力测试 + 动态流式监控机制通过 tiktoken 进行精确的令牌计算，结合响应时间分析，自动生成最大/最小/平均性能的三维评估图谱，帮助您全面了解 API 的性能特征。
+Unsure about the LLM API speed? Uncertain about supplier reliability? Traditional performance testing tools often only provide simple response time data, failing to comprehensively reflect API's actual performance. LM Speed employs five-round continuous stress testing + dynamic streaming monitoring mechanism, using tiktoken for precise token calculation, combined with response time analysis, automatically generating three-dimensional evaluation maps of maximum/minimum/average performance to help you fully understand API's performance characteristics.
 
 ![picture-2025-02-12-20-21-55](https://vscode-markdown.s3.bitiful.net/e92fd7f59ac705341f7bc4e880f7e11d798a40e3a038b9373f9d885f70d997ac.png)  
 
-### 3. 测试结果难以沉淀
+### 3. Test Results Accumulation
 
-性能测试数据往往散落各处，难以进行系统性的积累和分析。LM Speed 提供一键式测试报告生成功能，自动整合性能指标、测试环境等关键信息，支持报告导出和团队分享。同时提供历史数据存储和趋势分析，帮助团队建立完整的性能评估体系。
+Performance test data is often scattered and difficult to systematically accumulate and analyze. LM Speed provides one-click test report generation, automatically integrating performance metrics, test environment, and other key information, supporting report export and team sharing. It also offers historical data storage and trend analysis, helping teams establish a complete performance evaluation system.
 
 ![picture-2025-02-12-20-24-15](https://vscode-markdown.s3.bitiful.net/2dcd9f8c44bc5801624e7b356a3c09ec41ae83c7e6ab51fd2414f5eb4092e983.png)  
 
-## 为用户创造的关键价值
+## Key Value Created for Users
 
-数据驱动的决策支持。通过全方位的性能数据分析，帮助您做出更明智的 API 选型决策：
+Data-driven decision support. Through comprehensive performance data analysis, helping you make wiser API selection decisions:
 
-- **实时性能洞察**：TPoS（：每秒令牌数）的实时监控，让您对 API 性能了如指掌。支持多维度数据实时展示，直观把握性能趋势。
-- **全维度评估体系**：覆盖首字延迟、响应时间、等核心指标，提供最全面的性能画像。
-- **可视化决策支持**：一键生成专业测试报告，支持多人实时协作，平均节省 80% 决策时间。提供丰富的数据可视化图表，辅助团队决策。
+- **Real-time Performance Insights**: Real-time monitoring of TPoS (Tokens per Second), giving you complete visibility into API performance. Supports multi-dimensional real-time data display for intuitive performance trend understanding.
+- **Comprehensive Evaluation System**: Covers core metrics including first token latency, response time, etc., providing the most comprehensive performance profile.
+- **Visual Decision Support**: One-click professional test report generation, supporting multi-user real-time collaboration, saving an average of 80% decision time. Provides rich data visualization charts to assist team decision-making.
+
+## Tech Stack
+
+- **Frontend**:
+  - Next.js 15
+  - React 19
+  - TypeScript
+  - TailwindCSS
+  - Radix UI Components
+  - SWR for data fetching
+  - next-intl for internationalization
+  - next-themes for dark mode
+
+- **Backend**:
+  - Next.js API Routes
+  - Drizzle ORM
+  - PostgreSQL
+  - OpenAI SDK
+  - tiktoken for token counting
+
+- **Development**:
+  - ESLint
+  - TypeScript
+  - Drizzle Kit for database management
+  - TailwindCSS for styling
+
+- **Deployment**:
+  - Docker
+  - Docker Compose
+  - PostgreSQL
+
+## Contributing
+
+Issues and Pull Requests are welcome! Before submitting a PR, please ensure:
+
+1. Code follows project coding standards
+2. Necessary tests are added
+3. Related documentation is updated
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Contact
+
+- Official Website: <https://lmspeed.net>
+- Issue Tracker: <https://github.com/yourusername/lm-speed/issues>
+- Email: your-email@example.com
+
+
