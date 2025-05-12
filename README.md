@@ -21,7 +21,7 @@ Provides precise and reliable OpenAI API performance testing solutions for AI ap
 ### Deploy with Docker Compose
 
 ```yaml
-version: '3.8'
+version: '4.0'
 
 services:
   app:
