@@ -63,5 +63,5 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-# 使用新的启动脚本
-CMD ["./start.sh"]
+# 直接使用内联命令启动应用
+CMD ["sh", "-c", "echo 'Waiting for database...' && until nc -z db 5432; do echo 'Database not ready - waiting...'; sleep 1; done && echo 'Database ready - starting application' && exec pnpm start"]

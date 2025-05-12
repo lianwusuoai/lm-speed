@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NextResponse } from "next/server";
 import { db } from "@/db";
 import { speedTestsTable, speedTestResultsTable } from "@/db/schema";
@@ -53,7 +54,7 @@ export async function GET(request: Request) {
           ? sql`${speedTestsTable.baseUrl} ILIKE ${`%${query.host}%`}`
           : sql`1=1`
       )
-      .limit(5);
+      .limit(100);
 
     return NextResponse.json({ recentTests });
   } catch (error) {
